@@ -3,16 +3,72 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f8f7f1" />
+  <meta name="theme-color" content="#f5f2eb" />
   <meta name="description" content="Гусь Кофейный в Королёве, Юбилейный. Авторский кофе, бабл-ти, десерты, уютная атмосфера и гости с хвостиками. Большая Комитетская, 15." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Гусь Кофейный — кофейня с характером" />
   <meta property="og:description" content="Хороший кофе. Уютные встречи. И немного гусиного настроения. Королёв, Юбилейный." />
-  <meta property="og:image" content="assets/hero-goose.svg" />
+  <meta property="og:image" content="assets/coffee-counter.jpg" />
   <meta name="color-scheme" content="light" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <title>Гусь Кофейный — кофе и хорошее настроение в Юбилейном</title>
   <link rel="stylesheet" href="styles.css" />
+  <style id="brand-system">
+/* GUСЬ КОФЕЙНЫЙ · BRAND SYSTEM 
+   Based on the original outlined goose & bean mark and authentic Yandex Maps interior photos.
+   Palette: off-white plaster, graphite/stone, muted terracotta outline and a NEON goose accent.
+*/
+:root{--ink:#252723;--cream:#f5f2eb;--cream2:#ebe8e0;--line:#d8d5cc;--lime:#e7f46e;--lime-dark:#bac943;--peach:#ddd6cb;--lilac:#e4e1d9;--radius:12px;--header:80px;background:#f5f2eb;color:#252723}
+body{background:var(--cream)}
+.announcement{height:27px;background:#252723;color:#f5f2eb;font-weight:700;letter-spacing:.18em;font-size:9px}
+.announcement-dot{background:#e7f46e}.announcement-star{font-weight:400;color:#e7f46e}
+.site-header{background:rgba(245,242,235,.97);border-bottom:1px solid #dfdbd2}
+.brand{gap:13px}.brand-mark{width:58px;height:58px;border:0;background:transparent;box-shadow:none;overflow:hidden;border-radius:100px}
+.brand-mark img{height:100%;width:100%;object-fit:contain;mix-blend-mode:multiply}
+.brand-text{font-size:24px;letter-spacing:-.06em;line-height:.92}.brand-text span{font-size:10px;font-weight:850;letter-spacing:.12em;margin-top:5px}
+.desktop-nav a{font-weight:720}.desktop-nav a:hover{color:#8b5a51}
+.nav-cta,.button-dark{background:#252723}.nav-cta:hover,.button-dark:hover{background:#4a4c45}
+.eyebrow{font-weight:750;letter-spacing:.15em;font-size:10px}.eyebrow-line{width:19px;height:1px}
+.hero{padding-top:24px}.hero-grid{grid-template-columns:.94fr 1.06fr;gap:clamp(30px,5vw,80px);min-height:min(720px,calc(100svh - 180px))}
+.hero-copy{padding:25px 0 44px}.hero h1{font-size:clamp(75px,7.5vw,122px);letter-spacing:-.082em;line-height:.93;margin:25px 0 26px;font-weight:950}
+.hero h1 .h1-alt{color:#aa726a}.hero-lead{max-width:445px;color:#575950;font-size:clamp(16px,1.25vw,18px);line-height:1.68}
+.hero-actions{margin-top:27px}.button{border-radius:7px;min-height:53px}.text-link{border-bottom-color:#aaa69e}
+.hero-social-proof{margin-top:43px}.rating-stars{color:#a6695d}
+.brand-hero-visual{min-height:530px;max-height:720px;position:relative;padding:0 22px 28px 0}
+.hero-photo-frame{height:100%;width:100%;border:1px solid #a39f95;position:relative;overflow:hidden;background:#414842}
+.hero-photo-bg{height:100%;width:100%;overflow:hidden}
+.hero-photo{height:100%;width:100%;object-fit:cover;object-position:center 45%;filter:saturate(.89) contrast(1.02);transition:transform .5s}
+.hero-photo-frame:hover .hero-photo{transform:scale(1.025)}.hero-photo.is-fallback{object-fit:cover}
+.photo-label{background:#e7f46e;position:absolute;right:0;bottom:0;left:0;padding:12px 19px;display:flex;align-items:center;gap:8px;font-size:10px;font-weight:900;letter-spacing:.1em}
+.label-cross{font-size:16px;font-weight:400}.photo-label-num{margin-left:auto;opacity:.6}
+.round-seal{width:147px;height:147px;position:absolute;right:-8px;top:7%;display:grid;place-items:center;border-radius:50%;background:#f7f4ed;border:6px solid #f7f4ed;box-shadow:0 11px 27px #1117;transform:rotate(8deg);z-index:2}
+.round-seal img{width:100%;height:100%;border-radius:50%;object-fit:contain}
+.brand-hero-caption{position:absolute;right:22px;bottom:2px;left:0;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:9px;letter-spacing:.14em;font-weight:800;color:#6f7068}
+.hero-bottom-line{background:#d8d5cc}.hero-bottom{height:51px}
+.marquee{height:63px;background:#252723;color:#e7f46e}.marquee-track span{font-size:19px;font-weight:850;letter-spacing:.01em}
+.section-head h2,.treats-copy h2,.contact-content h2,.about-left h2{font-weight:950;letter-spacing:-.072em}
+.section-head h2 em,.treats-copy h2 em,.contact-content h2 em{color:#ad796f}
+.menu-section{background:#f5f2eb}.tab{border-radius:5px;border:1px solid #c8c6bd;font-weight:730;color:#44463f}
+.tab.is-active{background:#252723;color:#f5f2eb}.tab:hover{border-color:#252723}
+.visual-cream{background:#e7e2d8}.visual-peach{background:#d9cebf}.visual-lilac{background:#e0e0dc}.visual-lime{background:#e4e8d2}
+.menu-card-visual{border-radius:7px;box-shadow:inset 0 0 0 1px #25272309}.menu-card-visual img{filter:saturate(.7) drop-shadow(0 12px 12px #2222)}
+.menu-card-tag{border-bottom-color:#8d8c81}.menu-note .icon{color:#9a7167}
+.about-section{background:#262927;color:#f5f2eb}.eyebrow-light{color:#e7f46e}.about-left h2 span{color:#e6f07c}.about-left>p{color:#c9cac4}
+.about-minigoose{border-color:#81837a}.about-minigoose img{border-radius:50%;background:#f4f2eb;padding:3px}
+.about-art{border-radius:7px;background:#54534f;overflow:hidden;min-height:330px}.brand-about-photo img{width:100%;height:100%;object-fit:cover;object-position:center;aspect-ratio:10/7.4;filter:saturate(.83)}.brand-about-photo img.is-fallback{object-fit:contain;padding:25px}
+.about-art-chip{background:#e7f46e;color:#252723;border-radius:3px}
+.feature-icon{border-color:#6c726c!important}.feature-grid{border-top-color:#4a4e4b!important}
+.treats-section{background:#e9e6de}.treats-art{background:#d4d6ce;border-radius:7px 110px 7px 7px}.treats-copy>p{color:#52574e}
+.reviews-section{background:#f5f2eb}.review-card{border:1px solid #dedbd3;background:#ebe8e1;border-radius:7px}.reviews-score>b{color:#252723}.review-star,.reviews-score .rating-stars{color:#a16e62}
+.contact-section{background:#e8e5db}.map-visual{border-radius:7px;box-shadow:9px 9px 0 #d2ccbf}.map-pattern{background:#e6e3d9}.map-pin{background:#e7f46e}.map-pin img{border-radius:50%;background:#faf9f4}.contact-icon{background:#d8dbbd}
+.footer{background:#262927;color:#f5f2eb}.footer-brand .brand-mark{background:#f5f2eb;border-radius:50%}.footer .brand-text span{color:#e4e5de}
+.mobile-bottom-bar{background:#f5f2eb}.mobile-bottom-bar a{background:#e1e0d7}
+@media(max-width:1100px){.hero h1{font-size:clamp(68px,7.2vw,95px)}.round-seal{height:120px;width:120px;right:-10px}}
+@media(max-width:900px){.brand-hero-visual{min-height:510px;max-height:none}.hero-photo-frame{max-height:600px}}
+@media(max-width:650px){.announcement{font-size:8px;letter-spacing:.065em}.brand-mark{width:48px;height:48px}.brand-text{font-size:19px}.brand-text span{font-size:9px}.hero{padding-top:8px}.hero-grid{gap:14px}.hero-copy{padding:23px 0 0}.hero h1{font-size:clamp(63px,13.6vw,85px);margin:16px 0 12px}.hero-lead{font-size:14px;line-height:1.55}.hero-actions{margin-top:17px}.hero-social-proof{margin-top:17px}.brand-hero-visual{width:100%;max-width:100%;min-height:290px;height:clamp(290px,70vw,430px);margin-top:6px;padding-right:12px;padding-bottom:20px}.round-seal{width:87px;height:87px;top:7%;right:0;border-width:3px;box-shadow:0 6px 12px #0003}.photo-label{padding:10px 12px;font-size:8px}.brand-hero-caption{font-size:7px;right:12px}.hero-bottom{display:none}.section-pad{padding:68px 0}.menu-card-visual{border-radius:5px}.treats-art{border-radius:7px 75px 7px 7px}.about-art{min-height:220px}.about-art img{aspect-ratio:1.35}.contact-actions .button{border-radius:5px}.footer{padding-bottom:100px}}
+@media(max-width:370px){.hero h1{font-size:57px}.hero-art.brand-hero-visual{min-height:270px;height:270px}.brand-text{font-size:18px}}
+
+  </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Гусь Кофейный","telephone":"+7-965-133-63-33","address":{"@type":"PostalAddress","streetAddress":"Большая Комитетская улица, 15","addressLocality":"Королёв","addressRegion":"Московская область","addressCountry":"RU"},"geo":{"@type":"GeoCoordinates","latitude":55.930902,"longitude":37.851822},"hasMap":"https://yandex.ru/maps/org/gus_kofe/181455288900","sameAs":["https://t.me/goosik_coffee"],"servesCuisine":"Coffee and desserts"}</script>
 </head>
 <body>
@@ -37,12 +93,12 @@
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
   </svg>
 
-  <div class="announcement"><span class="announcement-dot"></span> Здесь пахнет кофе и хорошим настроением <span class="announcement-star">✳</span> Юбилейный, Королёв</div>
+  <div class="announcement"><span class="announcement-dot"></span> ГУСЬ КОФЕЙНЫЙ <span class="announcement-star">/</span> ВАШ КОФЕ В ЮБИЛЕЙНОМ</div>
 
   <header class="site-header" id="top">
     <div class="wrap nav-shell">
       <a class="brand" href="#top" aria-label="Гусь Кофейный — на главную">
-        <span class="brand-mark"><img src="assets/goose-mark.svg" alt="" width="45" height="45" /></span>
+        <span class="brand-mark"><img src="assets/official-logo.jpg" onerror="this.onerror=null;this.src='assets/logo-traced.svg'" alt="Фирменный логотип Гусь Кофейный" width="58" height="58" /></span>
         <span class="brand-text">ГУСЬ<span>КОФЕЙНЫЙ</span></span>
       </a>
       <nav class="desktop-nav" aria-label="Основное меню">
@@ -64,26 +120,28 @@
     <section class="hero section" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow"><span class="eyebrow-line"></span> ТВОЯ КОФЕЙНЯ ПО СОСЕДСТВУ</span>
-          <h1 id="hero-title">КОФЕ.<br/><span class="h1-alt">ГУСЬ.</span><br/>ЛЮБОВЬ.</h1>
-          <p class="hero-lead">Хороший кофе, вкусные десерты и немного гусиного настроения. Место, в которое хочется возвращаться.</p>
+          <span class="eyebrow"><span class="eyebrow-line"></span> БОЛЬШАЯ КОМИТЕТСКАЯ, 15 • ЮБИЛЕЙНЫЙ</span>
+          <h1 id="hero-title">КОФЕ.<br/><span class="h1-alt">ГУСЬ.</span><br/>И ТЫ.</h1>
+          <p class="hero-lead">Знакомый вкус, свой бариста и немного гусиного характера. Заглядывай за кофе, оставайся за настроением.</p>
           <div class="hero-actions">
-            <a class="button button-dark" href="#menu">Выбрать вкусное <svg class="icon"><use href="#i-arrow-up-right"/></svg></a>
+            <a class="button button-dark" href="#menu">Смотреть меню <svg class="icon"><use href="#i-arrow-up-right"/></svg></a>
             <a class="text-link" href="https://yandex.ru/maps/org/gus_kofe/181455288900" target="_blank" rel="noopener noreferrer">Где мы находимся <svg class="icon"><use href="#i-arrow-up-right"/></svg></a>
           </div>
           <div class="hero-social-proof"><span class="rating-stars" aria-label="5 из 5 звёзд"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></span><span><b>5,0 на Яндекс Картах</b><small>«Хорошее место — 2026»</small></span></div>
         </div>
-        <div class="hero-art">
-          <img class="hero-art-image" src="assets/hero-goose.svg" alt="Иллюстрация фирменного гуся с большой чашкой кофе" width="850" height="920" fetchpriority="high" />
-          <div class="hero-sticker sticker-one"><svg class="icon"><use href="#i-spark"/></svg><span>БЕРЁМ<br/>ЗА ДОБРО!</span></div>
-          <div class="hero-sticker sticker-two"><span>100%</span><small>гусиное<br/>настроение</small></div>
-          <div class="hero-art-caption">КОРОЛЁВ / ЮБИЛЕЙНЫЙ <span>01 — 05</span></div>
+        <div class="hero-art brand-hero-visual">
+          <div class="hero-photo-frame">
+            <div class="hero-photo-bg"><img class="hero-photo" src="assets/coffee-counter.jpg" alt="Настоящая кофейная стойка «Гусь Кофейный»: кофемашина, неоновый гусь и фирменная посуда" width="750" height="1000" fetchpriority="high" onerror="this.onerror=null;this.src='assets/brand-neon.svg';this.classList.add('is-fallback')" /></div>
+            <div class="photo-label"><span class="label-cross">+</span> ЭТО НАШ НАСТОЯЩИЙ ГУСЬ <span class="photo-label-num">01 / 02</span></div>
+          </div>
+          <div class="round-seal"><img src="assets/official-logo.jpg" alt="Знак кофейни Гусь Кофейный" onerror="this.onerror=null;this.src='assets/logo-traced.svg'" width="160" height="160" /></div>
+          <div class="brand-hero-caption"><span>ЮБИЛЕЙНЫЙ, КОРОЛЁВ</span><span>КОФЕ + ЛЮДИ + ГУСЬ</span></div>
         </div>
       </div>
-      <div class="wrap hero-bottom"><span>ОСТОРОЖНО: МОЖНО ВЛЮБИТЬСЯ В КОФЕ</span><div class="hero-bottom-line"></div><a href="#menu" aria-label="Листать к меню">ЛИСТАЙ НИЖЕ <svg class="icon"><use href="#i-arrow-right"/></svg></a></div>
+      <div class="wrap hero-bottom"><span>КОФЕЙНЯ С НАСТОЯЩИМ ХАРАКТЕРОМ</span><div class="hero-bottom-line"></div><a href="#menu" aria-label="Листать к меню">ЛИСТАЙ НИЖЕ <svg class="icon"><use href="#i-arrow-right"/></svg></a></div>
     </section>
 
-    <section class="marquee" aria-label="Наши особенности"><div class="marquee-track" aria-hidden="true"><span>ХОРОШИЙ КОФЕ</span><svg class="icon"><use href="#i-spark"/></svg><span>МНОГО УЮТА</span><svg class="icon"><use href="#i-spark"/></svg><span>ЕЩЁ БОЛЬШЕ ГУСЯ</span><svg class="icon"><use href="#i-spark"/></svg><span>ХОРОШИЙ КОФЕ</span><svg class="icon"><use href="#i-spark"/></svg><span>МНОГО УЮТА</span><svg class="icon"><use href="#i-spark"/></svg><span>ЕЩЁ БОЛЬШЕ ГУСЯ</span><svg class="icon"><use href="#i-spark"/></svg></div></section>
+    <section class="marquee" aria-label="Наши особенности"><div class="marquee-track" aria-hidden="true"><span>ГУСЬ КОФЕЙНЫЙ</span><svg class="icon"><use href="#i-spark"/></svg><span>МЕСТО ДЛЯ СВОИХ</span><svg class="icon"><use href="#i-spark"/></svg><span>КОФЕ С СОБОЙ</span><svg class="icon"><use href="#i-spark"/></svg><span>ГУСЬ КОФЕЙНЫЙ</span><svg class="icon"><use href="#i-spark"/></svg><span>МЕСТО ДЛЯ СВОИХ</span><svg class="icon"><use href="#i-spark"/></svg><span>КОФЕ С СОБОЙ</span><svg class="icon"><use href="#i-spark"/></svg></div></section>
 
     <section class="menu-section section section-pad" id="menu" aria-labelledby="menu-title">
       <div class="wrap">
@@ -100,8 +158,8 @@
     </section>
 
     <section class="about-section section section-pad" id="about" aria-labelledby="about-title">
-      <div class="wrap about-grid"><div class="about-left"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> НЕ ПРОСТО ВЫПИТЬ КОФЕ</span><h2 id="about-title">ТУТ <span>СВОИ.</span><br/>ТУТ <span>ТЕПЛО.</span></h2><p>Забежать за кофе по дороге. Остаться поболтать. Прийти с другом, детьми или с любимым хвостиком. В «Гусе» для хорошего момента не нужен особый повод.</p><a class="text-link text-link-light" href="https://yandex.ru/maps/org/gus_kofe/181455288900" target="_blank" rel="noopener noreferrer">Посмотреть кофейню на карте <svg class="icon"><use href="#i-arrow-up-right"/></svg></a><div class="about-minigoose"><img src="assets/goose-mark.svg" width="74" height="74" alt="" /><span>СЮДА ХОЧЕТСЯ<br/>ВОЗВРАЩАТЬСЯ</span></div></div>
-      <div class="about-right"><div class="about-art"><img src="assets/space.svg" alt="Иллюстрация уютного кофейного уголка с чашкой на столе" width="760" height="590"/><span class="about-art-chip">МЕСТО ДЛЯ СВОИХ</span></div><div class="feature-grid">
+      <div class="wrap about-grid"><div class="about-left"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> НЕ ПРОСТО ВЫПИТЬ КОФЕ</span><h2 id="about-title">ЗДЕСЬ <span>СВОИ.</span><br/>ЗДЕСЬ <span>ГУСЬ.</span></h2><p>Забегай за утренней чашкой, встречайся с друзьями или бери любимый напиток с собой. А ещё к нам можно с питомцами — гостям здесь рады.</p><a class="text-link text-link-light" href="https://yandex.ru/maps/org/gus_kofe/181455288900" target="_blank" rel="noopener noreferrer">Посмотреть кофейню на карте <svg class="icon"><use href="#i-arrow-up-right"/></svg></a><div class="about-minigoose"><img src="assets/logo-traced.svg" width="74" height="74" alt="" /><span>СЮДА ХОЧЕТСЯ<br/>ВОЗВРАЩАТЬСЯ</span></div></div>
+      <div class="about-right"><div class="about-art brand-about-photo"><img src="assets/coffee-interior.jpg" onerror="this.onerror=null;this.src='assets/space.svg';this.classList.add('is-fallback')" alt="Реальный интерьер кофейни «Гусь Кофейный» на Большой Комитетской" width="1000" height="750"/><span class="about-art-chip">ТАК У НАС ВНУТРИ</span></div><div class="feature-grid">
         <div class="feature"><span class="feature-icon"><svg class="icon"><use href="#i-paw"/></svg></span><div><b>Можно с питомцем</b><span>Четвероногим гостям рады.</span></div></div>
         <div class="feature"><span class="feature-icon"><svg class="icon"><use href="#i-cup"/></svg></span><div><b>Взять с собой</b><span>Кофе для твоего маршрута.</span></div></div>
         <div class="feature"><span class="feature-icon"><svg class="icon"><use href="#i-wifi"/></svg></span><div><b>Wi-Fi и столики</b><span>Для разговора или короткой паузы.</span></div></div>
@@ -113,10 +171,10 @@
 
     <section class="reviews-section section section-pad" id="reviews" aria-labelledby="reviews-title"><div class="wrap"><div class="section-head"><div><span class="eyebrow"><span class="eyebrow-line"></span> ИХ СЛОВА — НЕ НАШИ</span><h2 id="reviews-title">ГУСЯ <em>ЛЮБЯТ.</em></h2></div><div class="reviews-score"><b>5,0</b><span><span class="rating-stars" aria-label="5 звёзд"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></span><small>Рейтинг на Яндекс Картах</small></span></div></div><div class="reviews-grid"><article class="review-card"><span class="quote-mark">“</span><blockquote>«Сырная пенка в „Гусь Кофейный“ — это отдельная история!»</blockquote><div class="review-bottom"><div class="review-person"><span class="avatar">А</span><span><b>Антон Афанасьев</b><small>Гость кофейни</small></span></div><span class="review-star"><svg class="icon"><use href="#i-star"/></svg> ОТЗЫВ</span></div></article><article class="review-card"><span class="quote-mark">“</span><blockquote>«Можно посидеть внутри или на крыльце».</blockquote><div class="review-bottom"><div class="review-person"><span class="avatar avatar-peach">О</span><span><b>Ольга Соколова</b><small>Гость кофейни</small></span></div><span class="review-star"><svg class="icon"><use href="#i-star"/></svg> ОТЗЫВ</span></div></article><article class="review-card"><span class="quote-mark">“</span><blockquote>«Дети пили какао, такого замечательного какао я еще не пробовала».</blockquote><div class="review-bottom"><div class="review-person"><span class="avatar avatar-violet">Ю</span><span><b>Юлия Я.</b><small>Гость кофейни</small></span></div><span class="review-star"><svg class="icon"><use href="#i-star"/></svg> ОТЗЫВ</span></div></article></div><div class="reviews-footer"><span>ОТЗЫВЫ ГОСТЕЙ — НАША ЛЮБИМАЯ ЧАСТЬ ДНЯ</span><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://yandex.ru/maps/org/gus_kofe/181455288900/reviews/">Все отзывы на Яндексе <svg class="icon"><use href="#i-arrow-up-right"/></svg></a></div></div></section>
 
-    <section class="contact-section section section-pad" id="contacts" aria-labelledby="contact-title"><div class="wrap"><div class="contact-grid"><div class="contact-content"><span class="eyebrow"><span class="eyebrow-line"></span> МЫ ТУТ, РЯДОМ</span><h2 id="contact-title">ЗАХОДИ,<br/><em>НЕ ГУСУЙ.</em></h2><p>Встретим, нальём любимый кофе и обязательно поднимем настроение.</p><div class="contact-list"><div class="contact-item"><span class="contact-icon"><svg class="icon"><use href="#i-pin"/></svg></span><div><small>АДРЕС</small><b>Королёв, мкр. Юбилейный<br/>Большая Комитетская, 15</b></div></div><div class="contact-item"><span class="contact-icon"><svg class="icon"><use href="#i-clock"/></svg></span><div><small>КОГДА ЗАХОДИТЬ</small><b>Работаем до 21:00</b><span>Актуальный график — на Яндекс Картах</span></div></div><div class="contact-item"><span class="contact-icon"><svg class="icon"><use href="#i-phone"/></svg></span><div><small>ТЕЛЕФОН</small><a href="tel:+79651336333">+7 (965) 133-63-33</a></div></div></div><div class="contact-actions"><a class="button button-dark" href="https://yandex.ru/maps/org/gus_kofe/181455288900" target="_blank" rel="noopener noreferrer">Построить маршрут <svg class="icon"><use href="#i-arrow-up-right"/></svg></a><a class="button button-outline" href="https://t.me/goosik_coffee" target="_blank" rel="noopener noreferrer">Наш Telegram <svg class="icon"><use href="#i-arrow-up-right"/></svg></a></div></div><div class="map-visual" aria-label="Схематичный блок с адресом кофейни и ссылкой на карту"><div class="map-top"><span>МОСКОВСКАЯ ОБЛАСТЬ <b>/</b> КОРОЛЁВ</span><svg class="icon"><use href="#i-pin"/></svg></div><div class="map-pattern"><div class="map-road road-one"></div><div class="map-road road-two"></div><div class="map-road road-three"></div><div class="map-road road-four"></div><div class="map-road road-five"></div><div class="map-square square-one"></div><div class="map-square square-two"></div><div class="map-square square-three"></div><div class="map-label l1">УЛ. ГЕРОЕВ КУРСАНТОВ</div><div class="map-label l2">БОЛЬШАЯ КОМИТЕТСКАЯ</div><div class="map-pin"><img src="assets/goose-mark.svg" alt=""/><span>МЫ ЗДЕСЬ!</span></div></div><a class="map-bottom" href="https://yandex.ru/maps/org/gus_kofe/181455288900" target="_blank" rel="noopener noreferrer"><span>ОТКРЫТЬ ЯНДЕКС КАРТЫ</span><svg class="icon"><use href="#i-arrow-up-right"/></svg></a></div></div></div></section>
+    <section class="contact-section section section-pad" id="contacts" aria-labelledby="contact-title"><div class="wrap"><div class="contact-grid"><div class="contact-content"><span class="eyebrow"><span class="eyebrow-line"></span> МЫ ТУТ, РЯДОМ</span><h2 id="contact-title">ЗАХОДИ,<br/><em>НЕ ГУСУЙ.</em></h2><p>Встретим, нальём любимый кофе и обязательно поднимем настроение.</p><div class="contact-list"><div class="contact-item"><span class="contact-icon"><svg class="icon"><use href="#i-pin"/></svg></span><div><small>АДРЕС</small><b>Королёв, мкр. Юбилейный<br/>Большая Комитетская, 15</b></div></div><div class="contact-item"><span class="contact-icon"><svg class="icon"><use href="#i-clock"/></svg></span><div><small>КОГДА ЗАХОДИТЬ</small><b>Работаем до 21:00</b><span>Актуальный график — на Яндекс Картах</span></div></div><div class="contact-item"><span class="contact-icon"><svg class="icon"><use href="#i-phone"/></svg></span><div><small>ТЕЛЕФОН</small><a href="tel:+79651336333">+7 (965) 133-63-33</a></div></div></div><div class="contact-actions"><a class="button button-dark" href="https://yandex.ru/maps/org/gus_kofe/181455288900" target="_blank" rel="noopener noreferrer">Построить маршрут <svg class="icon"><use href="#i-arrow-up-right"/></svg></a><a class="button button-outline" href="https://t.me/goosik_coffee" target="_blank" rel="noopener noreferrer">Наш Telegram <svg class="icon"><use href="#i-arrow-up-right"/></svg></a></div></div><div class="map-visual" aria-label="Схематичный блок с адресом кофейни и ссылкой на карту"><div class="map-top"><span>МОСКОВСКАЯ ОБЛАСТЬ <b>/</b> КОРОЛЁВ</span><svg class="icon"><use href="#i-pin"/></svg></div><div class="map-pattern"><div class="map-road road-one"></div><div class="map-road road-two"></div><div class="map-road road-three"></div><div class="map-road road-four"></div><div class="map-road road-five"></div><div class="map-square square-one"></div><div class="map-square square-two"></div><div class="map-square square-three"></div><div class="map-label l1">УЛ. ГЕРОЕВ КУРСАНТОВ</div><div class="map-label l2">БОЛЬШАЯ КОМИТЕТСКАЯ</div><div class="map-pin"><img src="assets/logo-traced.svg" alt=""/><span>МЫ ЗДЕСЬ!</span></div></div><a class="map-bottom" href="https://yandex.ru/maps/org/gus_kofe/181455288900" target="_blank" rel="noopener noreferrer"><span>ОТКРЫТЬ ЯНДЕКС КАРТЫ</span><svg class="icon"><use href="#i-arrow-up-right"/></svg></a></div></div></div></section>
   </main>
 
-  <footer class="footer"><div class="wrap footer-top"><a class="brand footer-brand" href="#top"><span class="brand-mark"><img src="assets/goose-mark.svg" alt="" width="45" height="45"/></span><span class="brand-text">ГУСЬ<span>КОФЕЙНЫЙ</span></span></a><p>КОФЕ, КОТОРЫЙ ПОНИМАЕТ ТЕБЯ.<br/>И ГУСЬ, КОТОРЫЙ ВСЕГДА РАД.</p><a class="back-top" href="#top" aria-label="Вернуться наверх"><svg class="icon"><use href="#i-arrow-up-right"/></svg></a></div><div class="wrap footer-bottom"><small>© ГУСЬ КОФЕЙНЫЙ · КОРОЛЁВ, ЮБИЛЕЙНЫЙ</small><div><a href="https://t.me/goosik_coffee" target="_blank" rel="noopener noreferrer">TELEGRAM</a><a href="https://yandex.ru/maps/org/gus_kofe/181455288900" target="_blank" rel="noopener noreferrer">ЯНДЕКС КАРТЫ</a><a href="tel:+79651336333">ПОЗВОНИТЬ</a></div><small>СДЕЛАНО С ЛЮБОВЬЮ К КОФЕ</small></div></footer>
+  <footer class="footer"><div class="wrap footer-top"><a class="brand footer-brand" href="#top"><span class="brand-mark"><img src="assets/official-logo.jpg" onerror="this.onerror=null;this.src='assets/logo-traced.svg'" alt="Фирменный логотип Гусь Кофейный" width="58" height="58"/></span><span class="brand-text">ГУСЬ<span>КОФЕЙНЫЙ</span></span></a><p>КОФЕ, КОТОРЫЙ ПОНИМАЕТ ТЕБЯ.<br/>И ГУСЬ, КОТОРЫЙ ВСЕГДА РАД.</p><a class="back-top" href="#top" aria-label="Вернуться наверх"><svg class="icon"><use href="#i-arrow-up-right"/></svg></a></div><div class="wrap footer-bottom"><small>© ГУСЬ КОФЕЙНЫЙ · КОРОЛЁВ, ЮБИЛЕЙНЫЙ</small><div><a href="https://t.me/goosik_coffee" target="_blank" rel="noopener noreferrer">TELEGRAM</a><a href="https://yandex.ru/maps/org/gus_kofe/181455288900" target="_blank" rel="noopener noreferrer">ЯНДЕКС КАРТЫ</a><a href="tel:+79651336333">ПОЗВОНИТЬ</a></div><small>СДЕЛАНО С ЛЮБОВЬЮ К КОФЕ</small></div></footer>
 
   <div class="mobile-bottom-bar"><a href="https://yandex.ru/maps/org/gus_kofe/181455288900" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-pin"/></svg> Как добраться</a><a href="tel:+79651336333"><svg class="icon"><use href="#i-phone"/></svg> Позвонить</a></div>
 
