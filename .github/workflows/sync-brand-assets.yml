@@ -1,0 +1,67 @@
+name: Save verified cafe photos and logo in repository
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-brand-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download original identity and photos from the same Yandex Maps listing
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          import time
+
+          assets = {
+            'assets/official-logo.jpg': 'https://avatars.mds.yandex.net/get-altay/16494614/2a0000019a7c52c323588085efa3d559b79b/S',
+            'assets/coffee-counter.jpg': 'https://avatars.mds.yandex.net/get-altay/14793643/2a000001942aabbd69cf01a3164edb381188/XXL_height',
+            'assets/coffee-interior.jpg': 'https://avatars.mds.yandex.net/get-altay/17649278/2a0000019b26ef93fb0f4dbc3c113e0dd74a/XXL_height'
+          }
+          errors = []
+          for filename, url in assets.items():
+            target = Path(filename)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            last_error = None
+            for attempt in range(3):
+              try:
+                req = Request(url, headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36', 'Accept':'image/avif,image/webp,image/apng,image/*,*/*;q=0.8'})
+                with urlopen(req, timeout=30) as response:
+                  payload = response.read()
+                if len(payload) < 2500 or not (payload.startswith(b'\\xff\\xd8\\xff') or payload.startswith(b'\\x89PNG') or payload.startswith(b'RIFF')):
+                  raise ValueError(f'Unexpected image bytes: {len(payload)}')
+                target.write_bytes(payload)
+                print(f'OK: {filename} ({len(payload)} bytes)')
+                last_error = None
+                break
+              except Exception as ex:
+                last_error = ex
+                print(f'Retry {attempt+1}: {filename}: {ex}')
+                time.sleep(2)
+            if last_error is not None:
+              errors.append(filename)
+          if errors:
+            raise SystemExit('Brand images not downloaded: ' + ', '.join(errors))
+          PY
+      - name: Commit images to main so the deployed site never hotlinks
+        shell: bash
+        run: |
+          git add assets/official-logo.jpg assets/coffee-counter.jpg assets/coffee-interior.jpg
+          if git diff --cached --quiet; then
+            echo "Original brand media already tracked"
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Store authentic Goose Coffee branding and café images locally'
+          git push origin HEAD:main
