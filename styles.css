@@ -16,3 +16,116 @@
 @media(max-width:370px){.treats-copy h2{font-size:37px;letter-spacing:-.09em}}
 
 @media(max-width:650px){.hero-copy{padding:24px 0 0}.hero h1{font-size:clamp(60px,14vw,90px);margin:18px 0 15px}.hero-actions{margin-top:16px}.hero-social-proof{margin-top:12px;gap:7px}.hero-social-proof small{display:none}.hero-social-proof b{font-size:11px}.hero-social-proof .rating-stars .icon:not(:first-child){display:none}.hero-social-proof .rating-stars .icon{width:17px;height:17px}.hero-art{width:min(100%,295px);margin-top:-6px}}
+
+/* Прайс: подтверждённые позиции сгруппированы по напитку и объёму.
+   Специфичность выше, чем у базовых карточек и бренд-стилей. */
+.menu-items.menu-priced {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  min-height: 0;
+}
+.menu-items.menu-priced.single {
+  grid-template-columns: minmax(0, min(100%, 560px));
+}
+.menu-items.menu-priced .menu-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fffdfa;
+  border: 1px solid #dbd7cd;
+  border-radius: 10px;
+}
+.menu-items.menu-priced .menu-card-visual {
+  height: 180px;
+  min-height: 180px;
+  border-radius: 0;
+  box-shadow: none;
+}
+.menu-items.menu-priced .menu-card-visual img {
+  width: min(220px, 60%);
+  height: 96%;
+  object-fit: contain;
+}
+.menu-items.menu-priced .menu-card-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px 23px 23px;
+}
+.menu-items.menu-priced .menu-card-info .menu-card-tag {
+  align-self: flex-start;
+  margin: 0 0 9px;
+  font-size: 10px;
+  color: #66685f;
+}
+.menu-items.menu-priced .menu-card h3 {
+  margin: 0;
+  font-size: clamp(23px, 2.2vw, 30px);
+  letter-spacing: -.045em;
+}
+.menu-items.menu-priced .menu-card p {
+  margin: 10px 0 17px;
+  min-height: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #55584f;
+}
+.menu-volume-list {
+  margin-top: auto;
+  padding-top: 4px;
+  border-top: 1px solid #d9d7ce;
+}
+.menu-volume-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 9px 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #484b45;
+}
+.menu-volume-row + .menu-volume-row {
+  border-top: 1px solid #eeebe5;
+}
+.menu-volume-row strong {
+  flex-shrink: 0;
+  color: #252723;
+  font-size: 20px;
+  font-weight: 850;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+@media (max-width: 650px) {
+  .menu-items.menu-priced,
+  .menu-items.menu-priced.single {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .menu-items.menu-priced .menu-card-visual {
+    height: 158px;
+    min-height: 158px;
+  }
+  .menu-items.menu-priced .menu-card-info {
+    padding: 17px 18px 18px;
+  }
+  .menu-items.menu-priced .menu-card-info .menu-card-tag {
+    font-size: 9px;
+  }
+  .menu-items.menu-priced .menu-card h3 {
+    font-size: 23px;
+  }
+  .menu-items.menu-priced .menu-card p {
+    font-size: 12.5px;
+    margin: 8px 0 13px;
+    min-height: 0;
+  }
+  .menu-volume-row {
+    padding: 8px 0;
+    font-size: 14px;
+  }
+  .menu-volume-row strong {
+    font-size: 19px;
+  }
+}
