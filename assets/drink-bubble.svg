@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 540" fill="none">
+<defs><linearGradient id="tea" x1="90" y1="100" x2="420" y2="490" gradientUnits="userSpaceOnUse"><stop stop-color="#D3A5D2"/><stop offset="1" stop-color="#AC7CB5"/></linearGradient></defs>
+<ellipse cx="240" cy="491" rx="150" ry="16" fill="#73507B" opacity=".13"/>
+<path d="M273 122 322 0" stroke="#251F2D" stroke-width="19" stroke-linecap="round"/>
+<path d="M110 156h260l-24 286c-3 30-18 42-48 42H183c-30 0-46-15-48-45l-25-283Z" fill="url(#tea)" stroke="#28202E" stroke-width="7"/>
+<path d="M99 148c0-16 15-26 31-26h221c18 0 31 10 31 26v24H99v-24Z" fill="#F9F4EA" stroke="#28202E" stroke-width="7"/>
+<path d="M129 265c70-15 145 23 224 3" stroke="#FCF3FE" stroke-width="7" opacity=".44"/>
+<g fill="#37243B"><circle cx="168" cy="422" r="22"/><circle cx="218" cy="443" r="23"/><circle cx="269" cy="414" r="24"/><circle cx="322" cy="442" r="23"/><circle cx="188" cy="467" r="16"/><circle cx="282" cy="463" r="16"/></g>
+<g fill="#FFF3FC" opacity=".5"><circle cx="162" cy="414" r="6"/><circle cx="212" cy="437" r="6"/><circle cx="263" cy="406" r="6"/><circle cx="316" cy="434" r="6"/></g>
+<rect x="177" y="280" width="127" height="87" rx="7" fill="#F8F5EE" stroke="#28202E" stroke-width="5"/>
+<text x="240" y="336" font-family="Arial,sans-serif" font-size="37" font-weight="900" text-anchor="middle" fill="#28202E">ГУСЬ</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 920" fill="none">
+<defs>
+  <linearGradient id="bg" x1="50" y1="0" x2="700" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="#EBFA9C"/><stop offset="1" stop-color="#C6E953"/></linearGradient>
+  <linearGradient id="cup" x1="350" y1="410" x2="650" y2="690" gradientUnits="userSpaceOnUse"><stop stop-color="#FFA476"/><stop offset="1" stop-color="#E46B3F"/></linearGradient>
+  <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="17"/></filter>
+</defs>
+<rect width="850" height="920" rx="64" fill="url(#bg)"/>
+<circle cx="680" cy="174" r="155" fill="#F7FFCE" opacity=".46"/>
+<path d="M0 780c190-70 400-12 590 44 95 27 185 13 260-22v118H0V780Z" fill="#B5D63F" opacity=".55"/>
+<path d="M45 143c90-38 147-26 204-12M676 644c49 0 89 7 128 31" stroke="#1D2913" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="6 15" opacity=".5"/>
+<ellipse cx="434" cy="801" rx="263" ry="45" fill="#5C731B" opacity=".22" filter="url(#shadow)"/>
+<!-- Goose body -->
+<path d="M260 723c-124-2-181-71-161-189 11-68 46-120 106-143 52-20 105-8 145 20 23-60 36-134 52-208 12-51 27-96 72-116 45-19 95-7 115 27 23 41 7 76-21 103-15 16-20 32-15 49 23 81 43 164 36 249 53 23 89 77 90 143 1 70-24 117-71 146-56 35-139 34-204 17-40 18-94 21-144-18Z" fill="#FFFEF5" stroke="#1A2114" stroke-width="10" stroke-linejoin="round"/>
+<!-- Goose wing -->
+<path d="M192 500c40 67 106 77 163 76 26 0 51-6 76-24-4 76-57 117-124 119-76 2-132-49-145-109" fill="#F1F1E6" stroke="#1A2114" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M196 558c30 33 66 51 102 50" stroke="#1A2114" stroke-width="5" stroke-linecap="round"/>
+<!-- eye -->
+<circle cx="551" cy="159" r="9" fill="#1A2114"/>
+<circle cx="555" cy="155" r="2.8" fill="#fff"/>
+<!-- beak -->
+<path d="M591 176c39-1 72 10 109 28-33 18-78 24-111 13-6-14-5-31 2-41Z" fill="#FF935D" stroke="#1A2114" stroke-width="8" stroke-linejoin="round"/>
+<path d="M604 202c25 4 57 5 82 0" stroke="#1A2114" stroke-width="4" stroke-linecap="round"/>
+<!-- cup shadow and cup -->
+<g transform="rotate(-9 518 583)">
+<ellipse cx="518" cy="431" rx="150" ry="25" fill="#1A2114" opacity=".13"/>
+<path d="M377 425h284l-24 304c-3 33-26 52-62 52H459c-36 0-57-18-61-51l-21-305Z" fill="url(#cup)" stroke="#1A2114" stroke-width="9" stroke-linejoin="round"/>
+<path d="M357 395c0-14 11-25 25-25h270c14 0 26 11 26 25v41H357v-41Z" fill="#F8F3D8" stroke="#1A2114" stroke-width="9"/>
+<path d="M400 371c5-36 30-54 59-54 14 0 27 8 34 16 19-25 49-30 71-14 27 0 51 17 59 52" fill="#FFFDF3" stroke="#1A2114" stroke-width="8" stroke-linecap="round"/>
+<path d="M455 312c-15-13-12-35-1-50m59 49c-8-16-4-30 7-44" stroke="#F9F8E4" stroke-width="12" stroke-linecap="round" opacity=".7"/>
+<rect x="435" y="520" width="167" height="173" rx="10" fill="#FFF8E6" stroke="#1A2114" stroke-width="6"/>
+<text x="519" y="594" text-anchor="middle" font-family="Arial,sans-serif" font-size="57" font-weight="900" fill="#161815">ГУСЬ</text>
+<text x="519" y="631" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="800" letter-spacing="3" fill="#161815">КОФЕЙНЫЙ</text>
+<path d="M467 656h105" stroke="#161815" stroke-width="5" stroke-linecap="round"/>
+</g>
+<!-- paws -->
+<path d="M273 796l-15 49m-11 3 13-8 10 12m44-52 8 44m-18 9 17-10 17 10" stroke="#F29354" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- floating accent -->
+<path d="M136 293l13-35 13 35 35 13-35 13-13 35-13-35-35-13 35-13Z" fill="#FFFDF0" stroke="#161815" stroke-width="6" stroke-linejoin="round"/>
+<circle cx="718" cy="390" r="19" fill="#FF8B59" stroke="#1A2114" stroke-width="6"/>
+<path d="M700 100l19-27 15 30" stroke="#1A2114" stroke-width="6" stroke-linecap="round"/>
+</svg>
