@@ -1,45 +1,62 @@
 'use strict';
+// Подтверждённые позиции меню и цены, предоставленные заказчиком.
 const data = {
   coffee: [
-    {title:'Капучино', desc:'Любимая классика с нежной пенкой.', image:'drink-coffee.svg', alt:'Иллюстрация капучино', tag:'КОФЕЙНАЯ КЛАССИКА'},
-    {title:'Латте', desc:'Мягкий, сливочный, уютный.', image:'drink-coffee.svg', alt:'Иллюстрация латте', tag:'КОФЕЙНАЯ КЛАССИКА'},
-    {title:'Раф', desc:'Нежный кофе для неспешного момента.', image:'drink-coffee.svg', alt:'Иллюстрация рафа', tag:'КОФЕЙНАЯ КЛАССИКА'},
-    {title:'Эспрессо', desc:'Маленькая чашка большого характера.', image:'drink-coffee.svg', alt:'Иллюстрация эспрессо', tag:'КОФЕЙНАЯ КЛАССИКА'}
+    {
+      title: 'Капучино',
+      desc: 'Классический кофейный напиток, сочетающий в себе насыщенный вкус эспрессо и бархатистую текстуру молочной пены.',
+      image: 'drink-coffee.svg',
+      alt: 'Иллюстрация капучино',
+      tag: 'КОФЕ · ЭСПРЕССО И МОЛОКО',
+      sizes: [{volume:'250 мл',price:180},{volume:'350 мл',price:220},{volume:'450 мл',price:250}]
+    },
+    {
+      title: 'Американо',
+      desc: 'Классический кофейный напиток на основе эспрессо с добавлением горячей воды. Особенности напитка: насыщенный кофейный аромат, глубокий коричневый цвет, сбалансированная мягкость вкуса и объёмная порция для длительного наслаждения.',
+      image: 'drink-coffee.svg',
+      alt: 'Иллюстрация американо',
+      tag: 'КОФЕ · ЭСПРЕССО И ВОДА',
+      sizes: [{volume:'250 мл',price:150},{volume:'350 мл',price:180},{volume:'450 мл',price:200}]
+    }
   ],
-  signature: [
-    {title:'Сырная пенка',desc:'Та самая воздушная шапочка, которую хвалят гости.',image:'drink-coffee.svg',alt:'Иллюстрация авторского кофе с пенкой',tag:'ЛЮБИМЧИК ГОСТЕЙ'},
-    {title:'Авторский кофе',desc:'Когда хочется отойти от классики.',image:'drink-coffee.svg',alt:'Иллюстрация авторского кофе',tag:'КОФЕ С ХАРАКТЕРОМ'},
-    {title:'На растительном',desc:'Мягкий вкус и твой любимый вариант молока.',image:'drink-coffee.svg',alt:'Иллюстрация кофе на растительном молоке',tag:'ПО НАСТРОЕНИЮ'},
-    {title:'Сезонное',desc:'Напитки, которые особенно хороши именно сейчас.',image:'drink-bubble.svg',alt:'Иллюстрация сезонного напитка',tag:'СПРОСИ У БАРИСТА'}
-  ],
-  noncoffee: [
-    {title:'Бабл-ти',desc:'Чай, шарики и удовольствие в одном стакане.',image:'drink-bubble.svg',alt:'Иллюстрация бабл-ти',tag:'ЛЮБИМЧИК ГОСТЕЙ'},
-    {title:'Какао',desc:'Почти объятие. Только в чашке.',image:'drink-coffee.svg',alt:'Иллюстрация какао',tag:'И ДЕТЯМ, И ВЗРОСЛЫМ'},
-    {title:'Матча',desc:'Для тех, кто выбирает свой ритм.',image:'drink-bubble.svg',alt:'Иллюстрация матча',tag:'НЕ ТОЛЬКО КОФЕ'},
-    {title:'Авторский чай',desc:'Вкусный повод сделать паузу.',image:'drink-bubble.svg',alt:'Иллюстрация авторского чая',tag:'НЕ ТОЛЬКО КОФЕ'}
-  ],
-  dessert: [
-    {title:'Круассаны',desc:'Слоёные, воздушные, хороши к кофе.',image:'drink-dessert.svg',alt:'Иллюстрация круассана',tag:'К КОФЕ'},
-    {title:'Эклеры и шу',desc:'Сладкий повод остаться подольше.',image:'drink-dessert.svg',alt:'Иллюстрация сладкой выпечки',tag:'СЛАДКАЯ ПАУЗА'},
-    {title:'Моти',desc:'Необычный десерт для любопытных.',image:'drink-dessert.svg',alt:'Иллюстрация десерта',tag:'СЛАДКАЯ ПАУЗА'},
-    {title:'Шоколадный фондан',desc:'Когда хочется по-настоящему шоколадного.',image:'drink-dessert.svg',alt:'Иллюстрация десерта',tag:'ДЛЯ НАСТРОЕНИЯ'}
+  bubble: [
+    {
+      title: 'Бабл-ти с карамельной тапиокой',
+      desc: 'Нежный молочный коктейль с изысканными карамельными нотами и жевательными шариками тапиоки, увенчанный воздушной молочной пенкой.',
+      image: 'drink-bubble.svg',
+      alt: 'Иллюстрация бабл-ти с карамельной тапиокой',
+      tag: 'БАБЛ БАР · КАРАМЕЛЬНАЯ ТАПИОКА',
+      sizes: [{volume:'500 мл',price:390}]
+    }
   ]
 };
-const palette = ['visual-cream','visual-peach','visual-lilac','visual-lime'];
-const categoryNames = {coffee:'КОФЕ',signature:'АВТОРСКОЕ',noncoffee:'НЕ КОФЕ',dessert:'ДЕСЕРТЫ'};
+const palette = ['visual-cream','visual-peach','visual-lilac'];
+const categoryNames = {coffee:'КОФЕ',bubble:'БАБЛ БАР'};
 const menuItems = document.getElementById('menu-items');
 const tabs = [...document.querySelectorAll('.tab')];
+const priceText = value => `${new Intl.NumberFormat('ru-RU').format(value)} ₽`;
 function renderMenu(category) {
-  const list = data[category] || data.coffee;
+  const key = Object.hasOwn(data,category) ? category : 'coffee';
+  const list = data[key];
+  menuItems.classList.add('menu-priced');
+  menuItems.classList.toggle('single',list.length===1);
   menuItems.innerHTML = list.map((item,i) => `
     <article class="menu-card" style="animation-delay:${i*55}ms">
-      <div class="menu-card-visual ${palette[(i+Object.keys(data).indexOf(category))%palette.length]}">
-        <span class="menu-card-index">0${i+1} / ${categoryNames[category]}</span>
+      <div class="menu-card-visual ${palette[(i+Object.keys(data).indexOf(key))%palette.length]}">
+        <span class="menu-card-index">${String(i+1).padStart(2,'0')} / ${categoryNames[key]}</span>
         <img src="assets/${item.image}" alt="${item.alt}" width="480" height="540" loading="lazy" />
       </div>
-      <div class="menu-card-info"><h3>${item.title}</h3><p>${item.desc}</p><span class="menu-card-tag">${item.tag}</span></div>
+      <div class="menu-card-info">
+        <span class="menu-card-tag">${item.tag}</span>
+        <h3>${item.title}</h3>
+        <p>${item.desc}</p>
+        <div class="menu-volume-list" aria-label="Объёмы и цены">
+          ${item.sizes.map(size => `<div class="menu-volume-row"><span>${size.volume}</span><strong>${priceText(size.price)}</strong></div>`).join('')}
+        </div>
+      </div>
     </article>`).join('');
 }
+renderMenu('coffee');
 tabs.forEach((tab,i)=>{
   tab.addEventListener('click',()=>{
     tabs.forEach(t=>{t.classList.remove('is-active');t.setAttribute('aria-selected','false');t.tabIndex=-1;});
